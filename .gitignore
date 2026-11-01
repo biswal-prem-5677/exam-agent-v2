@@ -1,0 +1,13 @@
+results.db
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+venv/
+*.zip
+*.log
+.coverage
+htmlcov/
+

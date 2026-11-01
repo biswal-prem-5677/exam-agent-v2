@@ -1,0 +1,98 @@
+{
+  "guardrails": {
+    "tab_switches": 11.0,
+    "face_not_detected_count": 11.0,
+    "multiple_faces_count": 1.0,
+    "copy_paste_events": 3.0
+  },
+  "cheat_features": [
+    "tab_switches",
+    "face_not_detected_count",
+    "multiple_faces_count",
+    "avg_time_per_question",
+    "copy_paste_events",
+    "mouse_idle_time",
+    "answer_speed_variance"
+  ],
+  "grader_features": [
+    "tfidf_cosine",
+    "keyword_recall",
+    "keyword_precision",
+    "jaccard",
+    "bigram_overlap",
+    "length_ratio",
+    "emb_cosine",
+    "emb_cov_mean",
+    "emb_cov_min"
+  ],
+  "normal_mean": {
+    "tab_switches": 2.482,
+    "face_not_detected_count": 1.355,
+    "multiple_faces_count": 0.077,
+    "avg_time_per_question": 63.139,
+    "copy_paste_events": 0.361,
+    "mouse_idle_time": 117.603,
+    "answer_speed_variance": 18.692
+  },
+  "normal_std": {
+    "tab_switches": 2.248,
+    "face_not_detected_count": 2.007,
+    "multiple_faces_count": 0.284,
+    "avg_time_per_question": 15.655,
+    "copy_paste_events": 0.652,
+    "mouse_idle_time": 50.542,
+    "answer_speed_variance": 7.692
+  },
+  "clip_bounds": {
+    "tab_switches": [
+      0.0,
+      33.00150000000099
+    ],
+    "face_not_detected_count": [
+      0.0,
+      24.001500000000988
+    ],
+    "multiple_faces_count": [
+      0.0,
+      6.0
+    ],
+    "avg_time_per_question": [
+      8.0,
+      171.7521000000014
+    ],
+    "copy_paste_events": [
+      0.0,
+      16.501500000000988
+    ],
+    "mouse_idle_time": [
+      0.0,
+      585.4594500000062
+    ],
+    "answer_speed_variance": [
+      3.80978,
+      83.62507500000004
+    ]
+  },
+  "cheat_model": "Gradient Boosting (monotonic) + calibration",
+  "grader_model": "Random Forest",
+  "thresholds": {
+    "low": 0.25,
+    "high": 0.6
+  },
+  "embedder": {
+    "type": "sentence-transformers",
+    "name": "all-MiniLM-L6-v2"
+  },
+  "data_source_grader": "HuggingFace dataset nkazi/MohlerASAG",
+  "definitions": {
+    "answer_speed_variance": "standard deviation of seconds spent per question",
+    "reference_exam": "about 20 questions / 20 minutes; counts scale with exam length"
+  },
+  "versions": {
+    "python": "3.13.16",
+    "scikit-learn": "1.6.1",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "joblib": "1.6.0"
+  }
+}
